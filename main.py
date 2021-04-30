@@ -100,15 +100,12 @@ for filepath in test_jpg_filepaths:
 	# нормализация картинки
 	X_test.append( (np.asarray(image)) );
 
-    
-# Считываем анотационный файл
+    # Считываем анотационный файл
 for filepath in test_anotaions:
     myfile = open(filepath, "rb")
     for line in myfile:
         mini_label=int(line)
         Y_test.append(label_mark[mini_label])
-
-
 
 
 X_Train=images
@@ -133,7 +130,6 @@ criterion = nn.MSELoss()# Mean Squared Error - критерий оптималь
 
 running_loss = 0.0
 net.train()
-
 
 
 loss_history = []
